@@ -8,7 +8,7 @@ h1
 {
 	font-family: '行楷－简';
 	font-weight: 100;
-	margin-top: -50px;
+	border-width: 100%;
 }
 a
 {
@@ -22,9 +22,10 @@ a.button:link, a.button:visited
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	color: #FFFFFF;
 	background-color: #0088ff;
-	width: 98%;
+	width: 100px;
 	text-align: center;
 	padding: 4px;
+	border: black solid thin;
 }
 a.button:hover, a.button:active {background-color: #0000ff}
 
@@ -64,9 +65,11 @@ img.headImg
 }
 .intro
 {
-	margin-left: 40%;
 	border: blue double;
 	width: 20%;
+	float: left;
+	margin-left: 9%;
+	margin-right: 9%;
 }
 .journal
 {
@@ -74,14 +77,17 @@ img.headImg
 	outline-style: dotted;
 	outline-color: green;
 	text-align: center;
-	width: 30%;
-	float: right;
-	margin-top: -30%; 
+	width: 30%; 
+	float: left;
 }
 .present
 {
-	border: dashed;
+	border: red dashed;
 	text-align: center;
 	width: 30%;
-	margin-top: -50px;
+	float: left;
+}
+.poem
+{
+	line-height: 200%;
 }

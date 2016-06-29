@@ -1,14 +1,16 @@
 body
 {
 	background-image: url("floor.jpg");
-	background-repeat: repeat-x repeat-y;
-	background-attachment: fixd;
 }
 h1
 {
 	font-family: '行楷－简';
 	font-weight: 100;
 	border-width: 100%;
+}
+hr
+{
+	height: 20px;
 }
 a
 {
@@ -18,11 +20,11 @@ a.button:link, a.button:visited
 {
 	display: block;
 	font-weight: bold;
-	font-size: 14px;
+	font-size: 24px;
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	color: #FFFFFF;
 	background-color: #0088ff;
-	width: 100px;
+	width: 50%;
 	text-align: center;
 	padding: 4px;
 	border: black solid thin;
@@ -42,6 +44,42 @@ a.dairy:link, a.dairy:visited
 	padding: 4px;
 }
 a.dairy:hover, a.dairy:active {background-color: #7A991A}
+
+
+div.horizontal
+{
+	height:55px;
+	width: 100%;
+	text-align: center;
+	margin: 0 auto;
+}
+div.horizontal ul
+{
+	list-style-type:none;
+	margin:0;
+	padding:0;
+}
+div.horizontal li
+{
+	width: 33%;
+	float: left;
+}
+div.horizontal a
+{
+	display: block;
+}
+a.navbutton:link, a.navbutton:visited
+{
+	font-weight:bold;
+	color:#FFFFFF;
+	background-color:#bebebe;
+	text-align:center;
+	padding:4px;
+	text-decoration:none;
+	text-transform:uppercase;
+}
+a.navbutton:hover, a.navbutton:active{background-color:#7A991A;}
+
 
 img.headImg
 {
@@ -66,26 +104,28 @@ img.headImg
 .intro
 {
 	border: blue double;
-	width: 20%;
-	float: left;
-	margin-left: 9%;
-	margin-right: 9%;
+	width: 80%;
+	height: 500px;
+	text-align: center;
+	margin: 0 auto;
 }
 .journal
 {
 	border: green solid thin;
 	outline-style: dotted;
 	outline-color: green;
+	width: 80%; 
+	height: 500px;
 	text-align: center;
-	width: 30%; 
-	float: left;
+	margin: 0 auto;
 }
 .present
 {
 	border: red dashed;
 	text-align: center;
-	width: 30%;
-	float: left;
+	width: 80%;
+	height: 500px;
+	margin: 0 auto;
 }
 .poem
 {

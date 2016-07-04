@@ -46,6 +46,14 @@ a.dairy:link, a.dairy:visited
 a.dairy:hover, a.dairy:active {background-color: #7A991A}
 
 
+#backToTop
+{
+	display: block, white;
+	color: #ff00ff;
+	text-align: center;
+	padding: 4px;
+}
+
 div.horizontal
 {
 	height:55px;

@@ -32,6 +32,7 @@ window.onscroll = function()
 		mybtn.style.display = '';
 	}
 };
+
 //control+option+t in Mac
 mybtn.accessKey = 't';
 
@@ -39,6 +40,7 @@ mybtn.init = function(initCond)
 {
 	this.style.display = 'none';
 	this.style.position = 'fixed';
+	this.style.cursor = 'pointer';
 	var webW = document.body.clientWidth;
 	var webH = document.body.clientHeight;
 

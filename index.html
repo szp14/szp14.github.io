@@ -8,6 +8,7 @@
 
 	<title>HomepageOfSzp</title>
 	<body>
+		<script src="hw1/AlertWindow.js" type="text/javascript"></script>
 		<img class="headImg" src="hw1/cloud.jpg"/>
 		<div class="iconImg"><img src="hw1/iconBW.jpg"/></div>
 
@@ -15,7 +16,7 @@
 		<div id = "backToTop">回到顶部</div>	
 		<script src="hw1/BackToTop.js" type="text/javascript"></script>
 		<script>
-			mybtn.init({RightUp : true})
+			mybtn.init({RightUp : true});
 		</script>
 		<div class="horizontal">
 			<ul>
@@ -57,6 +58,10 @@
 			</div>
 		</div>
 		<!--<p><bdo dir="rtl">enil siht ypoc uoy fi detaehc eb lliw ouY</bdo></p>-->
-
+		<script>
+			Modal.init({content : '欢迎来到宋知朋的主页！', closeKey : 87});
+			Modal.alert();
+			document.getElementById('myWin').focus();
+		</script>
 	</body>
 </html>

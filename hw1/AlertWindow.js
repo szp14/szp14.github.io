@@ -106,4 +106,5 @@ Modal.alert = function()
     // frag.appendChild(myContent);
     document.getElementById('myWin').appendChild(myClose);
     document.getElementById('myWin').appendChild(myContent);
+    document.getElementById('myWin').focus();
 }

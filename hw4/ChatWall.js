@@ -53,7 +53,15 @@ function createNewBar(message)
 
 	var newInfo = document.createElement('div');
 	newInfo.className = 'chatInfo';
-	newInfo.innerHTML = "<marquee scrollamount = '50'>" + message.content + "</marquee>";
+	debugger;
+	if(message.content.length * 50 > 960)
+	{
+		newInfo.innerHTML = "<marquee scrollamount = '50'>" + message.content + "</marquee>";
+	}
+	else
+	{
+		newInfo.innerHTML =  message.content;
+	}
 
 	newBar.appendChild(newImg);
 	newBar.appendChild(newInfo);

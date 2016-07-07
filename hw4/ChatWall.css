@@ -80,6 +80,7 @@ body
 	font-size: 50px;
 	color: white;
 
+	text-align: left;
 	white-space: nowrap;
 	overflow: hidden;
 }

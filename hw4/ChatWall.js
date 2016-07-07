@@ -1,4 +1,5 @@
 var eventQueue = [];
+var timer;
 
 var block = document.getElementsByClassName('chatBlock animaMoveUp')[0];
 blockListener = function()
@@ -20,9 +21,36 @@ function createNewBar(message)
 
 	var newImg = document.createElement('div');
 	newImg.className = 'chatImg';
-	newImg.style.backgroundImage = "url(" + message.headimgurl + ")";
-	newImg.style.font
-	newImg.innerText = message.nickname;
+
+	var name = document.createElement('div');
+	name.className = 'imgName';
+	name.innerText = message.nickname;
+	newImg.appendChild(name);
+
+	var bkImg = document.createElement('img');
+	bkImg.src = 'loading.gif';
+	bkImg.style.width = '100px';
+	bkImg.style.height = '100px';
+	bkImg.style.position = 'absolute';
+	bkImg.style.bottom = '0';
+	bkImg.style.left = '20px';
+	newImg.appendChild(bkImg);
+
+	var bkImg2 = document.createElement('img');
+	bkImg2.src = message.headimgurl;
+	bkImg2.style.width = '100px';
+	bkImg2.style.height = '100px';
+	bkImg2.style.position = 'absolute';
+	bkImg2.style.bottom = '0';
+	bkImg2.style.left = '20px';
+	bkImg2.style.display = 'none';
+	bkImg2.onload = function()
+	{
+		this.previousSibling.style.display = 'none';
+		this.style.display = '';
+	}
+	newImg.appendChild(bkImg2);
+
 	var newInfo = document.createElement('div');
 	newInfo.className = 'chatInfo';
 	newInfo.innerHTML = "<marquee scrollamount = '50'>" + message.content + "</marquee>";
@@ -47,9 +75,10 @@ socket.on('new message', function (message)
 
 function bulletinInfo(message)
 { 
+	clearTimeout(timer);
 	var board = document.getElementsByClassName('bulletin')[0];
 	board.innerHTML = "<marquee scrollamount = '50'>" + message.nickname + ' ' + message.content + "</marquee>";
-	setTimeout(function()
+	timer = setTimeout(function()
 	{
 		board.innerHTML = '';
 	}, 10000);

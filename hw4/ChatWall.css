@@ -86,15 +86,20 @@ body
 
 .chatImg
 {
-	background-image: url(loading.gif);
-	background-size: 80% 80%;
-	background-position: bottom; 
-	background-repeat: no-repeat;
 	width: 140px;
 	height: 140px;
 	position: relative;
 	float: left;
-
 	text-align: center;
+	
+}
+
+.imgName
+{
+	width: 99%;
+	height: 10%;
+	position: relative;
 	color: white;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }

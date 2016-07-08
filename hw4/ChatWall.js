@@ -1,8 +1,19 @@
 var eventQueue = [];
 var timer;
 var isProtected = false;
-
+var originBar;
+var isRunning = false;
 var block = document.getElementsByClassName('chatBlock animaMoveUp')[0];
+
+function copyTo(bar1, bar2)
+{
+	if(bar1.children[0].children[0].innerText != 'admin')
+	{
+		bar2.children[0].children[2].src = bar1.children[0].children[2].src;
+		bar2.children[0].children[0].innerText = bar1.children[0].children[0].innerText;
+		bar2.children[1].innerHTML = bar1.children[1].innerHTML;
+	}
+}
 
 function protectFirstBar(ok)
 {
@@ -37,6 +48,8 @@ function protectFirstBar(ok)
 		block.removeChild(secondBar);
 		block.removeChild(thirdBar);
 
+
+		copyTo(originBar, firstBar);
 		parent.style.height = '80%';
 		firstBar.style.height = '33%';
 		secondBar.style.height = '33%';
@@ -53,10 +66,15 @@ blockListener = function()
 	block.removeEventListener('webkitAnimationEnd', blockListener);
 	this.style.animationPlayState = 'paused';
 	var firstBar = this.children[0];
+	copyTo(firstBar, originBar);
 	this.removeChild(firstBar);
 	this.classList.remove('animaMoveUp');
 	this.offsetWidth = this.offsetWidth;
 	this.classList.add('animaMoveUp');
+	if(eventQueue.length > 0)
+	{
+		updateInfo();
+	}
 }
 
 
@@ -110,6 +128,7 @@ function createNewBar(message)
 
 	newBar.appendChild(newImg);
 	newBar.appendChild(newInfo);
+	if(originBar == undefined) originBar = newBar;
 	return newBar;
 }
 
@@ -123,11 +142,13 @@ socket.on('new message', function (message)
 {
 	var newBar = createNewBar(message);
 	eventQueue.push(newBar);
+	updateInfo();
 });
 
 socket.on('admin', function (message) 
 {
 	eventQueue.unshift(message);
+	updateInfo();
 });
 
 function adminInfo(message)
@@ -138,6 +159,7 @@ function adminInfo(message)
 	}
 	clearTimeout(timer);
 	var info = block.parentNode.parentNode.children[1].children[1];
+	copyTo(info.parentNode, originBar);
 	info.innerHTML = "<marquee scrollamount = '50' style = 'color: red'>" + message.content + "</marquee>";
 	timer = setTimeout(function()
 	{
@@ -147,6 +169,7 @@ function adminInfo(message)
 
 function updateInfo()
 {
+	if(isRunning == true) return;
 	var numOfBar = isProtected ? 2 : 3;
 	while(block.children.length > numOfBar)
 	{
@@ -163,14 +186,6 @@ function updateInfo()
 	block.addEventListener('webkitAnimationEnd', blockListener, false);
 	block.style.animationPlayState = 'running';	
 }
-
-setInterval(function()
-{
-	if(eventQueue.length > 0)
-	{
-		updateInfo();
-	}
-}, 300);
 
 function load()
 {

@@ -176,6 +176,7 @@ function updateInfo()
 	if(newBar.style == undefined)
 	{
 		adminInfo(newBar);
+		updateInfo();
 		return;
 	}
 	newBar.style.height = isProtected ? '50%' : '33%';

@@ -125,8 +125,12 @@ socket.on('new message', function (message)
 	eventQueue.push(newBar);
 });
 
+socket.on('admin', function (message) 
+{
+	eventQueue.unshift(message);
+});
 
-function bulletinInfo(message)
+function adminInfo(message)
 { 
 	if(isProtected == false)
 	{
@@ -141,14 +145,19 @@ function bulletinInfo(message)
 	}, 10000);
 }
 
-socket.on('admin', function (message) 
-{
-	bulletinInfo(message);
-});
-
 function updateInfo()
 {
+	var numOfBar = isProtected ? 2 : 3;
+	while(block.children.length > numOfBar)
+	{
+		block.removeChild(block.children[0]);
+	}
 	var newBar = eventQueue.shift();
+	if(newBar.style == undefined)
+	{
+		adminInfo(newBar);
+		return;
+	}
 	newBar.style.height = isProtected ? '50%' : '33%';
 	block.appendChild(newBar);
 	block.addEventListener('webkitAnimationEnd', blockListener, false);

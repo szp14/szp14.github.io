@@ -1,5 +1,4 @@
 var eventQueue = [];
-var protectQueue = [];
 var timer;
 var isProtected = false;
 var originBar;
@@ -10,7 +9,6 @@ function copyTo(bar1, bar2)
 {
 	if(bar1.children[0].children[0].innerText != 'admin')
 	{
-		debugger;
 		bar2.children[0].children[2].src = bar1.children[0].children[2].src;
 		bar2.children[0].children[0].innerText = bar1.children[0].children[0].innerText;
 		bar2.children[1].innerHTML = bar1.children[1].innerHTML;
@@ -19,9 +17,7 @@ function copyTo(bar1, bar2)
 
 function protectFirstBar()
 {
-	if(isRunning) return;
 	isProtected = !isProtected;
-	protectQueue.pop();
 	var parent = block.parentNode;  //chatFixedBlock
 	var grandp = parent.parentNode; //mainWindow
 	if(isProtected == true)
@@ -79,10 +75,6 @@ blockListener = function()
 	if(eventQueue.length > 0)
 	{
 		updateInfo();
-	}
-	if(protectQueue.length > 0)
-	{
-		protectFirstBar(isProtected = !isProtected);
 	}
 }
 
@@ -164,28 +156,22 @@ function adminInfo(message)
 { 
 	if(isProtected == false)
 	{
-		protectQueue.push(1);
-		protectFirstBar(isProtected);
+		protectFirstBar();
 	}
 	clearTimeout(timer);
 	var info = block.parentNode.parentNode.children[1].children[1];
 	copyTo(info.parentNode, originBar);
 	info.innerHTML = "<marquee scrollamount = '50' style = 'color: red'>" + message.content + "</marquee>";
+	debugger;
 	timer = setTimeout(function()
 	{
-		protectQueue.push(1);
-		protectFirstBar(isProtected);
+		protectFirstBar();
 	}, 10000);
 }
 
 function updateInfo()
 {
 	if(isRunning == true) return;
-	var numOfBar = isProtected ? 2 : 3;
-	while(block.children.length > numOfBar)
-	{
-		block.removeChild(block.children[0]);
-	}
 	var newBar = eventQueue.shift();
 	if(newBar.style == undefined)
 	{

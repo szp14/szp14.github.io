@@ -23,7 +23,7 @@
 		
 		<!-- <form>
 			<input type='button' value="点击动起来" onclick = "abc()"></input>
-			<input type='button' value="改变模式" onclick = "def()"></input>
+			<input type='button' value="管理员模式" onclick = "def()"></input>
 			<script language = 'javascript'>
 				function abc()
 				{
@@ -32,7 +32,8 @@
 				}
 				function def()
 				{
-					protectFirstBar(isProtected = !isProtected);
+					eventQueue.push({"nickname": "KZ", "content": "!!!"});
+					updateInfo();
 				}
 			</script>
 		</form> -->

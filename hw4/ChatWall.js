@@ -6,6 +6,8 @@ var block = document.getElementsByClassName('chatBlock animaMoveUp')[0];
 
 function protectFirstBar(ok)
 {
+	var tempQ = eventQueue;
+	eventQueue.length = 0;
 	var parent = block.parentNode;  //chatFixedBlock
 	var grandp = parent.parentNode; //mainWindow
 	if(ok == true)
@@ -13,7 +15,6 @@ function protectFirstBar(ok)
 		var firstBar = block.children[0];
 		var secondBar = block.children[1];
 		var thirdBar = block.children[2];
-		block.removeChild(firstBar);
 
 		firstBar.style.height = '27%';
 		secondBar.style.height = '50%';
@@ -22,6 +23,7 @@ function protectFirstBar(ok)
 		firstBar.children[0].children[2].src = 'icon.jpg';
 		firstBar.children[0].children[0].innerText = 'admin';
 
+		block.removeChild(firstBar);
 		grandp.removeChild(parent);
 		grandp.appendChild(firstBar);
 		grandp.appendChild(parent);
@@ -43,6 +45,7 @@ function protectFirstBar(ok)
 		block.appendChild(secondBar);
 		block.appendChild(thirdBar);
 	}
+	eventQueue = tempQ;
 }
 
 blockListener = function()

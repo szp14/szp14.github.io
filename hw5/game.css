@@ -1,0 +1,167 @@
+﻿body{
+	background:url(img/bg.jpg);
+	color:#ffffff;
+	font-family:"Microsoft YaHei";
+	-webkit-user-select: none;
+	user-select: none;
+}
+#container{
+	margin:0px auto;
+	padding:10px;
+	font-size:14px;
+}
+#title{
+	margin:20px auto 50px;
+	width:760px;
+	height:100px;
+	background:url(img/title.jpg) 0px 0px;
+}
+.menu{
+	margin:0px auto;
+	height:60px;
+	cursor:hand;
+}
+#mode{
+	margin:0px auto;
+	height:160px;
+	width:230px;
+}
+#classic{
+	float:left;
+	width:95px;
+	height:130px;
+	cursor:hand;
+	background:url(img/mode.jpg) 0px 0px;
+	border-style:solid;
+	border-width:5px;
+	border-color:#000000;
+	border-radius:10px;
+}
+#loop{
+	float:right;
+	width:95px;
+	height:130px;
+	cursor:hand;
+	background:url(img/mode.jpg) -95px 0px;
+	border-style:solid;
+	border-width:5px;
+	border-color:#066000;
+	border-radius:10px;
+}
+#easy{
+	width:155px;
+	background:url(img/menu.jpg) 0px 0px;
+}
+#normal{
+	width:235px;
+	background:url(img/menu.jpg) 0px -69px;
+}
+#hard{
+	width:170px;
+	background:url(img/menu.jpg) 0px -138px;
+}
+#custom{
+	width:235px;
+	background:url(img/menu.jpg) 0px -207px;
+}
+#start{
+	width:205px;
+	background:url(img/menu.jpg) 0px -276px;
+}
+#help{
+	width:160px;
+	background:url(img/menu.jpg) 0px -345px;
+}
+#option{
+	display:none;
+	padding-left:20px;
+	text-align:center;
+}
+.inputnum{
+	margin:10px 20px 0px 0px;
+	width:50px;
+}
+#gamehelp{
+	margin:0px auto;
+	width:400px;
+	padding:5px;
+	border:2px solid black;
+	color:#000000;
+	background:#fff;
+	display:none;
+}
+#gamesubmenu{
+	display:none;
+	text-align:center;
+	padding-right:30px;
+}
+img{
+	vertical-align:-60%;
+	margin:0 10px 0 40px;
+}
+#gamemain{
+	margin:30px auto 60px;
+	position:relative;
+	border:2px solid #086E00;
+	display:none;
+	-webkit-transform-origin:50% 0%;
+	-webkit-transform:scale(1);
+}
+#gamemain div{
+	position:absolute;
+	height:30px;
+	width:30px;
+	line-height:30px;
+	font-weight:bold;
+	text-align:center;
+	cursor:default;
+}
+
+.hidden{background:url(img/30.jpg) 0 0;}
+.flag{background:url(img/30.jpg) -30px 0;}
+.check{background:url(img/30.jpg) -60px 0;}
+.bomb{background:url(img/30.jpg) -90px 0;}
+.cbomb{background:url(img/30.jpg) -90px 0;}
+.wrong{background:url(img/30.jpg) -120px 0;}
+.hint{background:url(img/30.jpg) -150px 0;}
+.clear{background:url(img/30.jpg) -180px 0;}
+
+.num1{background:url(img/30.jpg) -180px 0;color:#3EA4B2;}
+.num2{background:url(img/30.jpg) -180px 0;color:#99B222;}
+.num3{background:url(img/30.jpg) -180px 0;color:#65B346;}
+.num4{background:url(img/30.jpg) -180px 0;color:#9C5D94;}
+.num5{background:url(img/30.jpg) -180px 0;color:#AE2918;}
+.num6{background:url(img/30.jpg) -180px 0;color:#2A993A;}
+.num7{background:url(img/30.jpg) -180px 0;color:#7F5F84;}
+.num8{background:url(img/30.jpg) -180px 0;color:#808080;}
+
+.translucent{
+	opacity: 0.4;
+}
+#result{
+	position:absolute;
+	left:50%;
+	margin:-60px 0 0 -200px;
+	width:400px;
+	height:120px;
+	z-index:99;
+	opacity:0.8;
+	text-align:center;
+	background-color:#ffffff;
+	display:none;
+	border-style:solid;
+	border-width:5px;
+	border-color:#808080;
+	border-radius:10px;
+}
+#ending{
+	margin:20px auto;
+	width:380px;
+	height:65px;
+	background:url(img/result.jpg);
+}
+#foot{
+	color:#99bbbb;
+	margin:30px auto 10px;
+	text-align:center;
+}

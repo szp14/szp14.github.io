@@ -62,6 +62,9 @@ $(document).ready(function()
 	{
 		$("#result")[0].style.display = "none";
 	});
+	document.getElementById("soundlose").volume = 0.1;
+	document.getElementById("soundwin").volume = 0.1;
+	document.getElementById("soundexpand").volume = 0.1;
 });
 
 function change_mode(m)
@@ -184,16 +187,14 @@ function play_sound(x)
 {
 	if(x == 0)
 	{
-		var s = document.getElementById("soundlose");
+		document.getElementById("soundlose").play();
 	}
 	else if(x == 1)
 	{
-		var s = document.getElementById("soundwin");
+		document.getElementById("soundwin").play();
 	}
 	else if(x == 2)
 	{
-		var s = document.getElementById("soundexpand");
+		document.getElementById("soundexpand").play();
 	}
-	s.volume = 0.1;
-	s.play();
 }

@@ -2,24 +2,18 @@
 	background:url(img/bg.jpg);
 	color:#ffffff;
 	font-family:"Microsoft YaHei";
+	font-size:14px;
 	-webkit-user-select: none;
-	user-select: none;
 }
 #container{
 	margin:0px auto;
 	padding:10px;
-	font-size:14px;
 }
 #title{
 	margin:20px auto 50px;
 	width:760px;
 	height:100px;
 	background:url(img/title.jpg) 0px 0px;
-}
-.menu{
-	margin:0px auto;
-	height:60px;
-	cursor:hand;
 }
 #mode{
 	margin:0px auto;
@@ -47,6 +41,11 @@
 	border-width:5px;
 	border-color:#066000;
 	border-radius:10px;
+}
+.menu{
+	margin:0px auto;
+	height:60px;
+	cursor:hand;
 }
 #easy{
 	width:155px;
@@ -90,7 +89,7 @@
 	background:#fff;
 	display:none;
 }
-#gamesubmenu{
+#submenu{
 	display:none;
 	text-align:center;
 	padding-right:30px;
@@ -159,9 +158,4 @@ img{
 	width:380px;
 	height:65px;
 	background:url(img/result.jpg);
-}
-#foot{
-	color:#99bbbb;
-	margin:30px auto 10px;
-	text-align:center;
 }

@@ -1,11 +1,13 @@
 ﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html lang="zh-cn">
+
 <head>
 	<meta charset="utf-8">
 	<title>扫雷</title>
 	<link rel="stylesheet" href="game.css">
 	<script src="jquery.js" type="text/javascript"></script>
 </head>
+
 <body>
 	<script type="text/javascript" src="game.js"></script>
 	<script type="text/javascript" src="gameClassic.js"></script>
@@ -30,19 +32,26 @@
 			</div>
 			<div id="help" class="menu"></div>
 			<div id="gamehelp">
-				<strong>游戏规则：</strong>将所有非地雷格掀开则胜利，掀开地雷格则失败。</br>
-				<strong>游戏操作：</strong><span>鼠标左键点击</span>方格，则掀开并显示其中数字。
-				该数字表示其周围的8个方格共包含几颗雷。</br>
-				如果掀开空白格，因其周围没有雷，故其周围格子自动掀开。</br>
-				在有雷的格子上，<span>点击鼠标右键</span>可标记雷。</br>
-				若一已掀开格子周围所有的雷均已正确标出，则在此格上<span>点击鼠标左键</span>可打开其周围无雷格。</br>
-				<strong>循环模式：</strong>最上方格子的上方连接最下方格子，最下方格子的下方连接最上方格子，左右亦是。</br>
+				<strong>游戏规则：</strong></br>
+				格子中的数字表示其周围的8个方格共包含几颗雷。</br>
+				胜利条件：掀开所有非地雷格。</br>
+				失败条件：掀开地雷格、标记完所有雷但有错误、在错误标记邻接格处进行提示操作。</br>
+				<strong>游戏操作：</strong></br>
+				未掀开格子上点击左键掀开，掀开空白格时其周围格子自动掀开，可连锁。</br>
+				未掀开格子上点击右键标记雷，再点取消。</br>
+				已掀开格子上点击左键进行提示。</br>
+				已掀开格子周围所有雷均已标出，则提示时掀开其周围无雷格。</br>
+				<strong>循环模式：</strong></br>
+				最上方格子的上方连接最下方格子，最下方格子的下方连接最上方格子，左右亦是。</br>
 				最外圈的半透明格子即为另一侧的第一个格子，不可点击。</br>
-				可在界面上通过鼠标拖动来改变当前视野位置，拖动时算点击。</br>
+				可在界面上通过鼠标拖动或者WSAD键来改变当前视野位置，拖动时算点击。</br>
+				<strong>其他：</strong></br>
+				请先选择模式再选择难度或自定义。</br>
+				自定义游戏参数超出范围时会自动调整。</br>
 			</div>
 		</div>
 		</br></br></br>
-		<div id="gamesubmenu">
+		<div id="submenu">
 			<img src="img/insect.jpg"><span id="gamelastnum">&nbsp;</span>
 			<img src="img/colck.jpg"><span id="gametime">&nbsp;</span>s
 		</div>
@@ -51,9 +60,11 @@
 		<div id="result">
 			<div id="ending"></div>
 		</div>
-		<audio id="soundwin" src="mp3/win.mp3" hidden="true"></audio>
-		<audio id="soundlose" src="mp3/biu.wav" hidden="true"></audio>
-		<audio id="soundexpand" src="mp3/expand.wav" hidden="true"></audio>
+		
+		<audio id="soundwin" src="sound/win.mp3" hidden="true"></audio>
+		<audio id="soundlose" src="sound/biu.wav" hidden="true"></audio>
+		<audio id="soundexpand" src="sound/expand.wav" hidden="true"></audio>
 	</div>
 </body>
+
 </html>

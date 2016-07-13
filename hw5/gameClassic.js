@@ -37,7 +37,7 @@ function init(lenX, lenY, numMine, clickX, clickY)
 				"px; top: " + (j - 1) * blockEdge + "px;' class = 'hidden'></div>";
 	$('#gamemain').html(area).width(lenX * blockEdge).height(lenY * blockEdge).show();
 	$('#gamewarning').html('');
-	$('#gamesubmenu').show();
+	$('#submenu').show();
 	$('#gamelastnum').text(remainingMine);
 }
 
